@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768" prefWidth="1024" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.masanz.marraz.controller.MainController">
+   <top>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button mnemonicParsing="false" onAction="#onLineButtonAction" text="LÍNEA" />
+            <Button mnemonicParsing="false" onAction="#onCircleButtonAction" text="CIRCULO" />
+            <Button mnemonicParsing="false" onAction="#onRectangleButtonAction" text="RECTÁNGULO" />
+            <Button mnemonicParsing="false" onAction="#onTriangleButtonAction" text="TRIÁNGULO" />
+            <Button mnemonicParsing="false" onAction="#onHouseButtonAction" text="CASA" />
+            <Label text="COLOR RELLENO" />
+            <ColorPicker fx:id="colorRelleno" onAction="#onColorRellenoAction">
+               <value>
+                  <Color red="0.5052631497383118" green="0.15345029532909393" blue="0.15345029532909393" />
+               </value></ColorPicker>
+            <Label text="COLOR CONTORNO" />
+            <ColorPicker fx:id="colorContorno" onAction="#onColorContornoAction">
+               <value>
+                  <Color red="0.3345029354095459" green="0.6507602334022522" blue="0.821052610874176" />
+               </value></ColorPicker>
+            <Label text="AREA: " />
+            <Label fx:id="labelArea" text="0 px^2" />
+            <Button mnemonicParsing="false" onAction="#onSaveAction" text="GUARDAR" />
+            <Button mnemonicParsing="false" onAction="#onChargeAction" text="CARGAR" />
+        </items>
+      </ToolBar>
+   </top>
+   <bottom>
+      <BorderPane fx:id="paneCanvas" BorderPane.alignment="CENTER">
+         <bottom>
+              <Canvas fx:id="canvas" height="728.0" onMouseClicked="#onCanvasMouseClicked" width="1024" BorderPane.alignment="CENTER" />
+         </bottom>
+      </BorderPane>
+   </bottom>
+</BorderPane>
